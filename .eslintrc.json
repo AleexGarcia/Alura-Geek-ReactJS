@@ -33,6 +33,8 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "react/prop-types": 
+        ["enabled", { "ignore": "ignore", "customValidators": "customValidator", "skipUndeclared": "skipUndeclared" }]
     }
 }

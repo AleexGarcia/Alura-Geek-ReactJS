@@ -1,0 +1,37 @@
+.button{
+    border: none;
+    height: 40px;
+}
+.primario{
+    background-color: #2A7AE4;
+    color: white;
+}
+.primario:hover{
+    background-color: #5595E9;
+    cursor: pointer;
+}
+.secundario{
+    background-color: transparent;
+    color: #2A7AE4;
+    border: 1px solid #2A7AE4;
+}
+.secundario:hover{
+    background-color: #D4E4FA;
+    cursor: pointer;
+}
+.header{
+    width: 133px;
+}
+@media screen and (min-width:767px) {
+    .button{
+        height: 51px;
+    }
+    .header{
+        width:166px;
+    }
+}
+@media screen and (min-width:1024px){
+    .header{
+        width: 182px;
+    }
+}
