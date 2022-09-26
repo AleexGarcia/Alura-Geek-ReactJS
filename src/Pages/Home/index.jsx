@@ -1,3 +1,4 @@
+import Contato from '../../components/Contato';
 import Produtos from './Produtos';
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
             <Produtos />
             <Produtos />
             <Produtos />
+            <Contato/>
         </>
     );
 }
