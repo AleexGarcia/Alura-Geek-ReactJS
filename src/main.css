@@ -1,0 +1,20 @@
+:root{
+    --white: #fff;
+    --azul:#2A7AE4;
+    --azul-claro:#D4E4FA;
+    --preto: #464646;
+    --cinza: #A2A2A2;
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    max-width: 91vw;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:1024px) {
+    .container{
+        max-width: 79vw;
+    }
+}

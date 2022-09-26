@@ -19,19 +19,13 @@
     background-color: #D4E4FA;
     cursor: pointer;
 }
-.header{
-    width: 133px;
-}
+
 @media screen and (min-width:767px) {
     .button{
         height: 51px;
     }
-    .header{
-        width:166px;
-    }
+    
 }
 @media screen and (min-width:1024px){
-    .header{
-        width: 182px;
-    }
+    
 }
