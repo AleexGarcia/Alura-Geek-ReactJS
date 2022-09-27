@@ -1,53 +1,82 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    Button{
+    flex-wrap: wrap;
+    row-gap: 1rem;
+
+    Button {
         width: 133px;
     }
-    &__lupa{
+
+    &__lupa {
 
         content: url(../../assets/Header/lupa.svg);
-        
+        padding-right: .5rem;
+
     }
-    &__inputBox{
-        
-        
-        input{
-            
-            display: none;
+
+    &__inputBox {
+
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #F5F5f5;
+        width: 90%;
+        margin: 0 auto;
+
+        input {
+            flex-grow: 1;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            padding: 12px 8px 12px 16px;
+            background-color: inherit;
+
         }
     }
-  
+
+
 }
 
-@media screen and (min-width: 767px) {
-    .header{
+@media screen and (min-width: 600px) {
+
+    .header {
         padding: 22px 0;
         display: grid;
         grid-template-columns: auto auto 1fr;
-        Button{
+
+        .botaoBusca {
+            display: none;
+        }
+
+        Button {
             width: 166px;
             justify-self: flex-end;
         }
-        &__logo{
+
+        &__logo {
             order: -2;
-            margin-right:2rem ;
+            margin-right: 2rem;
             width: 100px;
         }
-        &__lupa{
-            
+
+        &__lupa {
+
             padding-right: 1rem;
         }
-        &__inputBox{
+
+
+        &__inputBox {
             width: 272px;
             order: -1;
             display: flex;
             align-items: center;
             border-radius: 20px;
             background-color: #F5F5f5;
-            input{
+
+            input {
                 flex-grow: 1;
                 border-radius: 20px;
                 border: none;
@@ -57,25 +86,28 @@
                 display: flex;
             }
         }
-      
+
     }
-   
+
 }
+
 @media screen and (min-width: 1024px) {
-    .header{
+    .header {
         padding: 37.5px 0;
-        Button{
+
+        Button {
             width: 182px;
         }
-        &__logo{
+
+        &__logo {
             height: 50px;
             width: 176px;
         }
-        
-        &__inputBox{
+
+        &__inputBox {
             width: 383px;
         }
-      
+
     }
-   
+
 }
