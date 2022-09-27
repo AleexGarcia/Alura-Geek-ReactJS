@@ -1,6 +1,6 @@
 [
     {
-        "imagem": "./src/assets/Produtos/Skill.png",
+        "imagem": "./assets/Produtos/Skill.png",
         "categoria": "StarWars",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -8,7 +8,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-1.png",
+        "imagem": "./assets/Produtos/Skill-1.png",
         "categoria": "StarWars",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -16,7 +16,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-2.png",
+        "imagem": "./assets/Produtos/Skill-2.png",
         "categoria": "StarWars",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -24,7 +24,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-3.png",
+        "imagem": "./assets/Produtos/Skill-3.png",
         "categoria": "StarWars",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -32,7 +32,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-4.png",
+        "imagem": "./assets/Produtos/Skill-4.png",
         "categoria": "StarWars",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -40,7 +40,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-5.png",
+        "imagem": "./assets/Produtos/Skill-5.png",
         "categoria": "StarWars",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -48,7 +48,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-17.png",
+        "imagem": "./assets/Produtos/Skill-17.png",
         "categoria": "Consoles",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -56,7 +56,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-16.png",
+        "imagem": "./assets/Produtos/Skill-16.png",
         "categoria": "Consoles",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -64,7 +64,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-15.png",
+        "imagem": "./assets/Produtos/Skill-15.png",
         "categoria": "Consoles",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -72,7 +72,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-6.png",
+        "imagem": "./assets/Produtos/Skill-6.png",
         "categoria": "Consoles",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -80,7 +80,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-7.png",
+        "imagem": "./assets/Produtos/Skill-7.png",
         "categoria": "Consoles",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -88,7 +88,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-8.png",
+        "imagem": "./assets/Produtos/Skill-8.png",
         "categoria": "Consoles",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -96,7 +96,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-9.png",
+        "imagem": "./assets/Produtos/Skill-9.png",
         "categoria": "Diversos",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -104,7 +104,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-10.png",
+        "imagem": "./assets/Produtos/Skill-10.png",
         "categoria": "Diversos",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -112,7 +112,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-11.png",
+        "imagem": "./assets/Produtos/Skill-11.png",
         "categoria": "Diversos",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -120,7 +120,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-12.png",
+        "imagem": "./assets/Produtos/Skill-12.png",
         "categoria": "Diversos",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -128,7 +128,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-13.png",
+        "imagem": "./assets/Produtos/Skill-13.png",
         "categoria": "Diversos",
         "nome": "Produto XYZ",
         "preco": "30,00",
@@ -136,7 +136,7 @@
         "id": "1"
     },
     {
-        "imagem": "./src/assets/Produtos/Skill-14.png",
+        "imagem": "./assets/Produtos/Skill-14.png",
         "categoria": "Diversos",
         "nome": "Produto XYZ",
         "preco": "30,00",
