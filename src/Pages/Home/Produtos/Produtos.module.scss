@@ -31,47 +31,18 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 1rem;
+        column-gap: 2.44%;
+        row-gap: 1rem;
         justify-content: space-between;
-
-        figure {
-
-            max-width: 154px;
-
+        
+        figure{
+                
             &:nth-child(4) {
                 display: none;
             }
 
             &:nth-child(5) {
                 display: none;
-            }
-
-            img {
-                width: 100%;
-
-            }
-
-            figcaption {
-                margin-top: .5rem;
-                display: flex;
-                flex-direction: column;
-                gap: .5rem;
-
-                span {
-                    color: var(--preto);
-                    font-size: 14px;
-
-                    &:last-child {
-                        font-weight: 700;
-                        font-size: 16px;
-                    }
-                }
-
-                a {
-                    color: var(--azul);
-                    font-size: 14px;
-                    font-weight: 700;
-                }
             }
         }
 
@@ -84,12 +55,15 @@
 
 @media screen and (min-width: 600px) {}
     .produtos{
+        
         &__verTudo{
             font-size: 16px;
         }
         &__cards{
+            column-gap: 2.26%;
+           
             figure{
-                max-width: 164px;
+             
                 figcaption{
                     span{
                         &:last-child{
@@ -110,8 +84,10 @@
             font-size: 2rem;
         }
         &__cards {
+            justify-content: flex-start;
+            column-gap: 1.40%;
             figure {
-                max-width: 176px;
+                
                 &:nth-child(4) {
                     display: block;
                 }
