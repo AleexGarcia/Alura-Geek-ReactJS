@@ -77,7 +77,11 @@
 @media screen and (min-width: 1024px) {
    
     .produtos{
-
+        &__verTudo{
+            &:hover{
+                cursor: pointer;
+            }
+        }
         &__titulo{
             font-size: 2rem;
         }

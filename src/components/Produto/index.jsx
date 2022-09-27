@@ -11,7 +11,7 @@ export default function Produto({imagem,nome,preco,id,children,administrativo}) 
                 <span className={styles.produto__titulo} >{nome}</span>
                 <span className={styles.produto__preco}>R$ {preco}</span>
                 {administrativo ? <span>{id}</span> :
-                    <a>{children}</a>
+                    <a >{children}</a>
                 }
                 
             </figcaption>

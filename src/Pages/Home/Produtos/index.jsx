@@ -17,7 +17,7 @@ export default function Produtos({produtos}) {
                         nome={produto.nome}
                         id={produto.id}
                         administrativo={false}
-                    >Ver Tudo</Produto>
+                    >Ver produto</Produto>
                 ))}
            
             </div>
