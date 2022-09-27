@@ -4,9 +4,17 @@
     --azul-claro:#D4E4FA;
     --preto: #464646;
     --cinza: #A2A2A2;
+    --font-family: 'Raleway', sans-serif;
+
 }
 *{
     box-sizing: border-box;
+}
+body,html,a,button,textarea{
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--preto);
 }
 .container{
     max-width: 91vw;

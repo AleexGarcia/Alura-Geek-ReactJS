@@ -1,11 +1,11 @@
-import Contato from '../../components/Contato';
 import Produtos from './Produtos';
 import dadosProdutos from '../../dados/produtos.json';
-export default function Home() {
-        console.log(dadosProdutos)
-    return (
-        <>
+import styles from './Home.module.scss';
 
+export default function Home() {
+        
+    return (
+        <main className={styles.home}>
             <Produtos
                 produtos={dadosProdutos.filter(produto => produto.categoria === 'StarWars')}
             />
@@ -15,8 +15,6 @@ export default function Home() {
             <Produtos
                 produtos={dadosProdutos.filter(produto => produto.categoria === 'Diversos')}
             />
-
-            <Contato />
-        </>
+        </main>
     );
 }

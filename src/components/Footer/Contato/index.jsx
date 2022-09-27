@@ -1,10 +1,11 @@
-import Button from '../Button';
+import Button from '../../Button';
 import styles from './Contato.module.scss';
-
+import logo from '../../../assets/Header/Logo.svg';
+import classNames from 'classnames';
 export default function Contato() {
     return (
-        <section className={styles.contato}>
-            <img src="" alt="" className={styles.contato__logo} />
+        <section className={classNames(styles.contato, 'container') }>
+            <img src={logo} alt="" className={styles.contato__logo} />
             <ul className={styles.contato__lista}>
                 <li className={styles.contato__item}><a href="#" className={styles.contato__link}>Quem somos nós</a></li>
                 <li className={styles.contato__item}>
@@ -33,14 +34,14 @@ export default function Contato() {
                     </a>
                 </li>
             </ul>
-            <form action="">
-                <div>
-                    <label htmlFor=""></label>
+            <form className={styles.contato__formulario} action="">
+                <h3>Fale conosco</h3>
+                <div className={styles.inputBox}>
+                    <label htmlFor="">Nome</label>
                     <input type="text" />
                 </div>
                 <div>
-                    <label htmlFor=""></label>
-                    <textarea type="text" />
+                    <textarea type="text" placeholder='Escreva sua mensagem'/>
                 </div>
                 <Button color={'primario'}>Enviar mensagem</Button>
             </form>

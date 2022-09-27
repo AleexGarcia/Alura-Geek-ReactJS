@@ -1,0 +1,11 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 9vw;
+    padding: 4.5vw 0;
+}
+@media screen and (min-width: 1024px) {
+    .home{
+        gap: 4.5vw;
+    }
+}
