@@ -6,7 +6,10 @@ import React, { useState } from 'react';
 
 export default function Header() {
     const [exibeBusca, setExibeBusca] = useState(false);
-    
+    let largura  = window.screen.width;
+    if(largura > 600 && !exibeBusca){
+        setExibeBusca(true);
+    }
     return (
         <header className={classNames(styles.header, 'container')}>
             <img src={logo} alt='' className={styles.header__logo} />
