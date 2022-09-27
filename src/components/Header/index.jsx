@@ -2,14 +2,17 @@ import styles from './Header.module.scss';
 import logo from '../../assets/Header/Logo.svg';
 import Button from '../Button';
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Header() {
     const [exibeBusca, setExibeBusca] = useState(false);
     let largura  = window.screen.width;
-    if(largura > 600 && !exibeBusca){
-        setExibeBusca(true);
-    }
+   useEffect(()=>{
+if(largura>600 && !exibeBusca){
+setExibeBusca(true);
+}
+   },[largura])
+    
     return (
         <header className={classNames(styles.header, 'container')}>
             <img src={logo} alt='' className={styles.header__logo} />
