@@ -11,6 +11,7 @@ export default function Home() {
                 produtos={dadosProdutos.filter(produto => produto.categoria === 'StarWars')}
             />
             <Produtos
+                id={'consoles'}
                 produtos={dadosProdutos.filter(produto => produto.categoria === 'Consoles')}
             />
             <Produtos

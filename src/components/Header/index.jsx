@@ -3,16 +3,19 @@ import logo from '../../assets/Header/Logo.svg';
 import Button from '../Button';
 import classNames from 'classnames';
 import React, { useState, useEffect } from 'react';
-
+import { useNavigate, useLocation } from 'react-router-dom';
 export default function Header() {
     const [exibeBusca, setExibeBusca] = useState(false);
     const [mobile, setMobile] = useState();
+    let page = useLocation().pathname === '/login';
     let largura = useWindowSize().width;
-    
+    let navigate = useNavigate();
+
+
     if (largura > 600 && !exibeBusca) {
         setExibeBusca(true);
         setMobile(false);
-    }else if(largura < 600 && exibeBusca && !mobile){
+    } else if (largura < 600 && exibeBusca && !mobile) {
         setExibeBusca(false);
         setMobile(true);
     }
@@ -39,14 +42,24 @@ export default function Header() {
         return windowSize;
     }
 
+    function LoginBotao() {
+        navigate('login');
+    }
 
 
     return (
         <header className={classNames(styles.header, 'container')}>
-            <img src={logo} alt='' className={styles.header__logo} />
-            <Button color={'secundario'}>Login</Button>
+            <img
+                onClick={() => {
+                    navigate('/');
+                }}
+                src={logo} alt='' className={styles.header__logo} />
 
-
+            {!page && <Button
+                funcao={LoginBotao}
+                color={'secundario'}
+            >Login
+            </ Button>}
             <span
                 onClick={() => {
                     !exibeBusca ? setExibeBusca(true) : setExibeBusca(false);
@@ -55,7 +68,6 @@ export default function Header() {
             >
 
             </span>
-
             {exibeBusca && (<div className={styles.header__inputBox}>
                 <input type="search" placeholder='O que deseja encontrar?' />
                 <label
@@ -63,7 +75,6 @@ export default function Header() {
                 >
                 </label>
             </div>)}
-
         </header>
     );
 }
