@@ -11,11 +11,11 @@ export default function Dashboard() {
                 <div className={styles.dashboard__produtos}>
                     {dados.map((produto,index) => (
                         <Produto
-                            key={index}
-                            imagem={produto.imagem}
-                            nome={produto.nome}
-                            preco={produto.preco}
-                            id={produto.id}
+                            key= {index}
+                            imagem= {produto.imagem}
+                            nome= {produto.nome}
+                            preco= {produto.preco}
+                            id= {produto.id}
                         />
                     ))}
                 </div>
