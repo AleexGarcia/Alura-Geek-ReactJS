@@ -16,7 +16,7 @@ export default function Produtos({produtos,id}) {
                         preco={produto.preco}
                         nome={produto.nome}
                         id={produto.id}
-                        administrativo={false}
+                        
                     >Ver produto</Produto>
                 ))}
            

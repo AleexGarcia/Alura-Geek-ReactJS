@@ -6,8 +6,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 export default function Header() {
     const [exibeBusca, setExibeBusca] = useState(false);
-    const [mobile, setMobile] = useState();
-    let page = useLocation().pathname === '/login';
+    const [mobile, setMobile] = useState(false);
+    let page = (useLocation().pathname === '/login' || useLocation().pathname === '/dashboard' );
     let largura = useWindowSize().width;
     let navigate = useNavigate();
 

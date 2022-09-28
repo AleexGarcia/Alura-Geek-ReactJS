@@ -5,7 +5,7 @@ export default function Button({ color, children,funcao}) {
 
     return (
         <button
-            onClick={()=> funcao()}
+            onClick={()=> funcao != undefined && funcao()}
             className={classNames(styles.button, styles[color])}>
             {children}
         </button>
