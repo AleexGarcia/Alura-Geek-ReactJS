@@ -1,0 +1,69 @@
+main{   
+    background-color: var(--cinza-claro);
+
+}
+.adicionar {
+    padding: 4.5vw 0;
+    &__titulo {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        .inputBox {
+    
+            border-radius: 4px;
+            padding: 8px 12px;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--cinza);
+          
+            
+            label,
+            input,
+            textarea {
+                width: 100%;
+                color: var(--cinza);
+                font-size: 14px;
+              
+            }
+
+            input {
+                padding-top: 4px;
+                outline: none;
+                border: none;
+                color: var(--preto);
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 16px;
+              
+            }
+
+            textarea {
+                font-family: inherit;
+                outline: none;
+                border: none;
+                resize: none;
+                font-size: 16px;
+                height: 82px;
+            }
+
+        }
+    }
+}
+@media screen and (min-width:1024px) {
+    .adicionar{
+        &__titulo{
+            max-width: 559px;
+            margin: 0 auto 1rem auto;
+        }
+        &__formulario{
+            max-width: 559px;
+            margin: 0 auto;
+        }
+    }
+}

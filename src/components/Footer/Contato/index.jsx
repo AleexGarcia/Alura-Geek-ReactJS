@@ -40,7 +40,7 @@ export default function Contato() {
                     <label htmlFor="">Nome</label>
                     <input type="text" />
                 </div>
-                <div>
+                <div className={styles.inputBox}>
                     <textarea type="text" placeholder='Escreva sua mensagem'/>
                 </div>
                 <Button color={'primario'}>Enviar mensagem</Button>
