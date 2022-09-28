@@ -6,13 +6,41 @@ import React, { useState, useEffect } from 'react';
 
 export default function Header() {
     const [exibeBusca, setExibeBusca] = useState(false);
-    let largura  = window.screen.width;
-   useEffect(()=>{
-if(largura>600 && !exibeBusca){
-setExibeBusca(true);
-}
-   },[largura])
+    const [mobile, setMobile] = useState();
+    let largura = useWindowSize().width;
     
+    if (largura > 600 && !exibeBusca) {
+        setExibeBusca(true);
+        setMobile(false);
+    }else if(largura < 600 && exibeBusca && !mobile){
+        setExibeBusca(false);
+        setMobile(true);
+    }
+
+    function useWindowSize() {
+
+        const [windowSize, setWindowSize] = useState({
+            width: undefined,
+            height: undefined,
+        });
+
+        useEffect(() => {
+            function handleResize() {
+                setWindowSize({
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                });
+            }
+            window.addEventListener('resize', handleResize);
+            handleResize();
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
+
+        return windowSize;
+    }
+
+
+
     return (
         <header className={classNames(styles.header, 'container')}>
             <img src={logo} alt='' className={styles.header__logo} />
@@ -35,7 +63,7 @@ setExibeBusca(true);
                 >
                 </label>
             </div>)}
-            
+
         </header>
     );
 }
