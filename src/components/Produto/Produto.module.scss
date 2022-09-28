@@ -1,8 +1,29 @@
 .produto {
     width: 47.56%;
+    position: relative;
     img {
         width: 100%;
 
+    }
+    &__controles{
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 1;
+    }
+    &__delete{
+        content: url(../../assets/delete.svg);
+        margin-right: 8px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    
+    &__edit{
+        content: url(../../assets/edit.svg);
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     figcaption {
