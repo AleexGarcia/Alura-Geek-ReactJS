@@ -2,7 +2,14 @@ import styles from './Login.module.scss';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-export default function Login() {
+import { useEffect } from 'react';
+
+export default function Login(props) {
+
+    useEffect(() => {
+        props.setPage(false);
+    });
+
     const { register, handleSubmit } = useForm();
 
     let navigate = useNavigate();
@@ -13,11 +20,11 @@ export default function Login() {
     };
 
 
-  
+
 
     return (
         <main className={styles.login}>
-            <form  onSubmit={handleSubmit(onSubmit)} className={styles.formulario} >
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.formulario} >
                 <h2 className={styles.login__titulo}>Iniciar Sessão</h2>
                 <div className={styles.inputBox}>
                     <input required {...register('email')} id='email' className={styles.inputBox__input} placeholder=" " type="email" />

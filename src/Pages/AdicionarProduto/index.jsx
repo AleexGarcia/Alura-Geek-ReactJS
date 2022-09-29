@@ -1,7 +1,13 @@
 import styles from './AdicionarProduto.module.scss';
 import Button from '../../components/Button';
 import classNames from 'classnames';
-export default function AdicionarProduto() {
+import React,{useEffect} from 'react';
+
+export default function AdicionarProduto(props) {
+    useEffect(() => {
+        props.setPage(true);
+    });
+
     return (
         <main>
             <section className={classNames(styles.adicionar, 'container')}>

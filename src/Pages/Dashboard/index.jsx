@@ -3,7 +3,15 @@ import Button from '../../components/Button';
 import dados from '../../Data/produtos.json';
 import Produto from '../../components/Produto';
 import { useNavigate } from 'react-router-dom';
-export default function Dashboard() {
+import React,{useEffect} from 'react';
+export default function Dashboard(props) {
+    
+    useEffect(() => {
+        props.setPage(false);
+    });
+
+
+
     let navigate = useNavigate();
     const paginaAddProduto = () => {
         navigate('adicionar');

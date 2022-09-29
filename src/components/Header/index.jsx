@@ -2,22 +2,18 @@ import styles from './Header.module.scss';
 import logo from '../../assets/Header/Logo.svg';
 import Button from '../Button';
 import classNames from 'classnames';
-import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-export default function Header() {
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-   
-    const [exibeBusca,setExibeBusca] = useState();
+export default function Header(props) {
 
-    let page = (useLocation().pathname === '/login' || useLocation().pathname === '/dashboard');
+    const [exibeBusca, setExibeBusca] = useState();
 
     let largura = useWindowSize().width;
 
     let navigate = useNavigate();
 
     let minWidth = largura > 600;
-
-
 
 
     function useWindowSize() {
@@ -47,7 +43,7 @@ export default function Header() {
     function LoginBotao() {
         navigate('login');
     }
-
+    let logado = false;
 
     return (
         <header className={classNames(styles.header, 'container')}>
@@ -57,19 +53,25 @@ export default function Header() {
                 }}
                 src={logo} alt='' className={styles.header__logo} />
 
-            {!page && <Button
+            {props.page && (!logado ? (<Button
                 funcao={LoginBotao}
                 color={'secundario'}
             >Login
-            </ Button>}
-           
+            </ Button>) : (<Button
+                funcao={LoginBotao}
+                color={'secundario'}
+            >Menu Administrador
+            </ Button>)) }
+
             <span
-                onClick={setExibeBusca}
+                onClick={() => {
+                    exibeBusca ? setExibeBusca(false) : setExibeBusca(true);
+                }}
                 className={classNames(styles.header__lupa, styles.botaoBusca)}
             >
             </span>
 
-            {(minWidth || exibeBusca ? true : false) && (<div className={styles.header__inputBox}>
+            {(minWidth || exibeBusca) && (<div className={styles.header__inputBox}>
                 <input type="search" placeholder='O que deseja encontrar?' />
                 <label
                     className={styles.header__lupa}
