@@ -4,8 +4,9 @@ import styles from './Home.module.scss';
 import Banner from './Banner';
 import { useEffect } from 'react';
 export default function Home(props) {
+    
     useEffect(()=>{
-        props.setPage(true)
+        props.setPage(true);
     });
 
     return (

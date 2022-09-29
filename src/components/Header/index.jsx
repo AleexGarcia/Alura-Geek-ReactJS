@@ -43,7 +43,10 @@ export default function Header(props) {
     function LoginBotao() {
         navigate('login');
     }
-    let logado = false;
+    function menuAdministradorBotao() {
+        navigate('dashboard');
+    }
+    let login = false;
 
     return (
         <header className={classNames(styles.header, 'container')}>
@@ -53,12 +56,12 @@ export default function Header(props) {
                 }}
                 src={logo} alt='' className={styles.header__logo} />
 
-            {props.page && (!logado ? (<Button
+            {props.page && (!login ? (<Button
                 funcao={LoginBotao}
                 color={'secundario'}
             >Login
             </ Button>) : (<Button
-                funcao={LoginBotao}
+                funcao={menuAdministradorBotao}
                 color={'secundario'}
             >Menu Administrador
             </ Button>)) }

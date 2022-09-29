@@ -1,5 +1,5 @@
 import styles from './Produto.module.scss';
-
+import { Link } from 'react-router-dom';
 
 export default function Produto({ imagem, nome, preco, id, children }) {
 
@@ -17,7 +17,9 @@ export default function Produto({ imagem, nome, preco, id, children }) {
                 <span className={styles.produto__titulo} >{nome}</span>
                 <span className={styles.produto__preco}>R$ {preco}</span>
                 {children == undefined ? <span>#{id}</span> :
-                    <a >{children}</a>
+                    <Link
+                        to={`/produto/${id}`}
+                    >{children}</Link>
                 }
 
             </figcaption>

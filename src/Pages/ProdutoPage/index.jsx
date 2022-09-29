@@ -1,9 +1,13 @@
 import styles from './ProdutoPage.module.scss';
 import dados from '../../Data/produtos.json';
 import Produto from '../../components/Produto';
+import { useParams } from 'react-router-dom';
 export default function ProdutoPage() {
-    let produto = dados[0];
-    let similares = dados.filter(produto => produto.categoria === 'StarWars');
+   
+    const {id}= useParams();
+   
+    let produto = dados[dados.findIndex(produto =>produto.id === id)];
+    let similares = dados.filter(prod => prod.categoria === produto.categoria);
     return (
         <main>
             <figure className={styles.produto}>

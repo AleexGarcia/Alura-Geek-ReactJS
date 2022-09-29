@@ -15,7 +15,9 @@ export default function Login(props) {
     let navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data);
+
+
+
         navigate('../dashboard');
     };
 
