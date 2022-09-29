@@ -2,23 +2,23 @@ import styles from './Header.module.scss';
 import logo from '../../assets/Header/Logo.svg';
 import Button from '../Button';
 import classNames from 'classnames';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 export default function Header() {
-    const [exibeBusca, setExibeBusca] = useState(false);
-    const [mobile, setMobile] = useState(false);
-    let page = (useLocation().pathname === '/login' || useLocation().pathname === '/dashboard' );
+
+   
+    const [exibeBusca,setExibeBusca] = useState();
+
+    let page = (useLocation().pathname === '/login' || useLocation().pathname === '/dashboard');
+
     let largura = useWindowSize().width;
+
     let navigate = useNavigate();
 
+    let minWidth = largura > 600;
 
-    if (largura > 600 && !exibeBusca) {
-        setExibeBusca(true);
-        setMobile(false);
-    } else if (largura < 600 && exibeBusca && !mobile) {
-        setExibeBusca(false);
-        setMobile(true);
-    }
+
+
 
     function useWindowSize() {
 
@@ -42,6 +42,8 @@ export default function Header() {
         return windowSize;
     }
 
+
+
     function LoginBotao() {
         navigate('login');
     }
@@ -60,15 +62,14 @@ export default function Header() {
                 color={'secundario'}
             >Login
             </ Button>}
+           
             <span
-                onClick={() => {
-                    !exibeBusca ? setExibeBusca(true) : setExibeBusca(false);
-                }}
+                onClick={setExibeBusca}
                 className={classNames(styles.header__lupa, styles.botaoBusca)}
             >
-
             </span>
-            {exibeBusca && (<div className={styles.header__inputBox}>
+
+            {(minWidth || exibeBusca ? true : false) && (<div className={styles.header__inputBox}>
                 <input type="search" placeholder='O que deseja encontrar?' />
                 <label
                     className={styles.header__lupa}
