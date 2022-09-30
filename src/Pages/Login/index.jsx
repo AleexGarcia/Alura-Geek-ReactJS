@@ -2,13 +2,15 @@ import styles from './Login.module.scss';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import { HeaderContext } from '../../Context/HeaderContext';
+export default function Login() {
 
-export default function Login(props) {
-
-    useEffect(() => {
-        props.setPage(false);
+    const { setPage } = useContext(HeaderContext);
+    useEffect(()=>{
+        setPage(true);
     });
+
 
     const { register, handleSubmit } = useForm();
 
@@ -16,8 +18,8 @@ export default function Login(props) {
 
     const onSubmit = data => {
 
-        let bancoDeDados  = JSON.parse(localStorage.getItem('cadastro'));
-        if(bancoDeDados.email == data.email && bancoDeDados.senha == data.senha){
+        let bancoDeDados = JSON.parse(localStorage.getItem('cadastro'));
+        if (bancoDeDados.email == data.email && bancoDeDados.senha == data.senha) {
             navigate('../dashboard');
         }
     };

@@ -1,20 +1,21 @@
 import styles from './Cadastro.module.scss';
-import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
+import { useContext, useEffect } from 'react';
+import { HeaderContext } from '../../Context/HeaderContext';
 
-export default function Cadastro(props) {
+export default function Cadastro() {
 
-
-    useEffect(() => {
-        props.setPage(false);
+    const { setPage } = useContext(HeaderContext);
+    useEffect(()=>{
+        setPage(true);
     });
 
     const { register, handleSubmit } = useForm();
 
     let navigate = useNavigate();
-   
+
     const onSubmit = data => {
         console.log(data.email == data.confemail);
         if (data.senha === data.confSenha && data.confEmail === data.email) {

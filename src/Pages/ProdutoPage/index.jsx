@@ -2,8 +2,16 @@ import styles from './ProdutoPage.module.scss';
 import dados from '../../Data/produtos.json';
 import Produto from '../../components/Produto';
 import { useParams } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { HeaderContext } from '../../Context/HeaderContext';
 export default function ProdutoPage() {
    
+    const { setPage } = useContext(HeaderContext);
+    useEffect(()=>{
+        setPage(false);
+    });
+
+
     const {id}= useParams();
    
     let produto = dados[dados.findIndex(produto =>produto.id === id)];

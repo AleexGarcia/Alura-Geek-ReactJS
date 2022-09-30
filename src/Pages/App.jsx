@@ -7,28 +7,29 @@ import Login from './Login';
 import AdicionarProduto from './AdicionarProduto';
 import Dashboard from './Dashboard';
 import ProdutoPage from './ProdutoPage';
-import { useState } from 'react';
 import Cadastro from './Cadastro';
+import { AuthProvider } from '../Context/AuthContext';
+import { HeaderProvider } from '../Context/HeaderContext';
 
 function App() {
 
-    const [page, setPage] = useState();
-    
     return (
-        <Router>
-            <Header page={page} />
-            <Routes>
-                <Route index element={<Home setPage={setPage} />} />
-                <Route path='produto/:id' element={<ProdutoPage />} />
-                <Route path='login' element={<Login setPage={setPage}
-                />} />
-                <Route path='cadastro' element={<Cadastro setPage={setPage}
-                />} />
-                <Route path='dashboard' element={<Dashboard setPage={setPage} />} />
-                <Route path='dashboard/adicionar' element={<AdicionarProduto setPage={setPage} />} />
-            </Routes>
-            <Footer />
-        </Router>
+        <AuthProvider>
+            <HeaderProvider>
+                <Router>
+                    <Header />
+                    <Routes>
+                        <Route index element={<Home />} />
+                        <Route path='produto/:id' element={<ProdutoPage />} />
+                        <Route path='login' element={<Login />} />
+                        <Route path='cadastro' element={<Cadastro />} />
+                        <Route path='dashboard' element={<Dashboard />} />
+                        <Route path='dashboard/adicionar' element={<AdicionarProduto />} />
+                    </Routes>
+                    <Footer />
+                </Router>
+            </HeaderProvider>
+        </AuthProvider>
     );
 }
 

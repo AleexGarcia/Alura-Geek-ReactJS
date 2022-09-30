@@ -2,16 +2,21 @@ import Produtos from './Produtos';
 import dadosProdutos from '../../Data/produtos.json';
 import styles from './Home.module.scss';
 import Banner from './Banner';
-import { useEffect } from 'react';
-export default function Home(props) {
-    
+import { useContext, useEffect } from 'react';
+import { HeaderContext } from '../../Context/HeaderContext';
+
+export default function Home() {
+
+
+    const { setPage } = useContext(HeaderContext);
     useEffect(()=>{
-        props.setPage(true);
+        setPage(true);
     });
+
 
     return (
         <main className={styles.home}>
-            <Banner/>
+            <Banner />
             <Produtos
                 produtos={dadosProdutos.filter(produto => produto.categoria === 'StarWars')}
             />

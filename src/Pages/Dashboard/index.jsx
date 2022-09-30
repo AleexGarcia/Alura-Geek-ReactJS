@@ -3,13 +3,16 @@ import Button from '../../components/Button';
 import dados from '../../Data/produtos.json';
 import Produto from '../../components/Produto';
 import { useNavigate } from 'react-router-dom';
-import React,{useEffect} from 'react';
-export default function Dashboard(props) {
-    
-    useEffect(() => {
-        props.setPage(false);
-    });
+import { useContext, useEffect } from 'react';
+import { HeaderContext } from '../../Context/HeaderContext';
 
+export default function Dashboard() {
+
+
+    const { setPage } = useContext(HeaderContext);
+    useEffect(()=>{
+        setPage(false);
+    });
 
 
     let navigate = useNavigate();

@@ -4,8 +4,15 @@ import Button from '../Button';
 import classNames from 'classnames';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { HeaderContext } from '../../Context/HeaderContext';
 
-export default function Header(props) {
+export default function Header() {
+
+
+    const { page } = useContext(HeaderContext);
+
+ 
 
     const [exibeBusca, setExibeBusca] = useState();
 
@@ -56,7 +63,7 @@ export default function Header(props) {
                 }}
                 src={logo} alt='' className={styles.header__logo} />
 
-            {props.page && (!login ? (<Button
+            {page && (!login ? (<Button
                 funcao={LoginBotao}
                 color={'secundario'}
             >Login
@@ -64,7 +71,7 @@ export default function Header(props) {
                 funcao={menuAdministradorBotao}
                 color={'secundario'}
             >Menu Administrador
-            </ Button>)) }
+            </ Button>))}
 
             <span
                 onClick={() => {
