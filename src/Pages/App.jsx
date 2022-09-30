@@ -11,6 +11,7 @@ import Cadastro from './Cadastro';
 import { AuthProvider } from '../Context/AuthContext';
 import { HeaderProvider } from '../Context/HeaderContext';
 
+
 function App() {
 
     return (

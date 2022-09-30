@@ -6,12 +6,13 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { HeaderContext } from '../../Context/HeaderContext';
+import {AuthContext} from '../../Context/AuthContext';
 
 export default function Header() {
 
 
     const { page } = useContext(HeaderContext);
-
+    const {authenticated} = useContext(AuthContext);
  
 
     const [exibeBusca, setExibeBusca] = useState();
@@ -53,7 +54,7 @@ export default function Header() {
     function menuAdministradorBotao() {
         navigate('dashboard');
     }
-    let login = false;
+
 
     return (
         <header className={classNames(styles.header, 'container')}>
@@ -63,7 +64,7 @@ export default function Header() {
                 }}
                 src={logo} alt='' className={styles.header__logo} />
 
-            {page && (!login ? (<Button
+            {page && (!authenticated ? (<Button
                 funcao={LoginBotao}
                 color={'secundario'}
             >Login

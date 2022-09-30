@@ -1,23 +1,19 @@
-import React,{ createContext, useState} from 'react';
+import React, { createContext } from 'react';
 
-const Context = createContext();
+import useAuth from './Hooks/useAuth';
 
-function AuthProvider({children}){
-    const [authenticated, setAuthenticated] = useState(false);
+const AuthContext = createContext();
 
-    function handleLogin(data){
-        let bancoDeDados  = JSON.parse(localStorage.getItem('cadastro'));
-        if(bancoDeDados.email == data.email && bancoDeDados.senha == data.senha){
-            setAuthenticated(true);
-        }
-    }
+function AuthProvider({ children }) {
 
-
-    return(
-        <Context.Provider value={{authenticated, handleLogin}}>
+    const {
+        authenticated, handleLogin
+    } = useAuth();
+    return (
+        <AuthContext.Provider value={{ authenticated, handleLogin }}>
             {children}
-        </Context.Provider>
+        </AuthContext.Provider>
     );
 }
 
-export {Context, AuthProvider};
+export { AuthContext, AuthProvider };

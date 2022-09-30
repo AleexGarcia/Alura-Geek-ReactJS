@@ -1,27 +1,37 @@
 import styles from './Login.module.scss';
 import Button from '../../components/Button';
-import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useContext, useEffect } from 'react';
 import { HeaderContext } from '../../Context/HeaderContext';
+import { AuthContext } from '../../Context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+
 export default function Login() {
 
     const { setPage } = useContext(HeaderContext);
-    useEffect(()=>{
+    const { authenticated } = useContext(AuthContext);
+    const { handleLogin } = useContext(AuthContext);
+
+    useEffect(() => {
         setPage(true);
     });
 
+    useEffect(() => {
+        if (authenticated) {
+            navigate('/dashboard');
+        }
+    }, [authenticated]);
 
     const { register, handleSubmit } = useForm();
+
 
     let navigate = useNavigate();
 
     const onSubmit = data => {
 
-        let bancoDeDados = JSON.parse(localStorage.getItem('cadastro'));
-        if (bancoDeDados.email == data.email && bancoDeDados.senha == data.senha) {
-            navigate('../dashboard');
-        }
+        handleLogin(data);
+
+
     };
 
 
