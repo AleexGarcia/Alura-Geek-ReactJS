@@ -34,7 +34,9 @@ export default function Login() {
 
     };
 
-
+    function redirecionarCadastro() {
+        navigate('/cadastro');
+    }
 
 
     return (
@@ -55,6 +57,7 @@ export default function Login() {
                 >Entrar</Button>
             </form>
             <Button
+                funcao={redirecionarCadastro}
                 color={'secundario'}
             >Criar nova conta</Button>
         </main >

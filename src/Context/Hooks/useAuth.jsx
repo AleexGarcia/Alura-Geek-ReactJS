@@ -6,9 +6,14 @@ export default function useAuth() {
 
     async function handleLogin(data) {
         let bancoDeDados = JSON.parse(localStorage.getItem('cadastro'));
-        if (bancoDeDados.email == data.email && bancoDeDados.senha == data.senha) {
-            setAuthenticated(true);
-        }
+        
+        bancoDeDados.forEach(element => {
+            if (element.email == data.email && element.senha == data.senha) {
+                setAuthenticated(true);
+            }
+
+        });
+
     }
     return { authenticated, handleLogin };
 }

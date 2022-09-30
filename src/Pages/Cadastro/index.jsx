@@ -8,7 +8,7 @@ import { HeaderContext } from '../../Context/HeaderContext';
 export default function Cadastro() {
 
     const { setPage } = useContext(HeaderContext);
-    useEffect(()=>{
+    useEffect(() => {
         setPage(true);
     });
 
@@ -17,14 +17,23 @@ export default function Cadastro() {
     let navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data.email == data.confemail);
+
         if (data.senha === data.confSenha && data.confEmail === data.email) {
             console.log('entrei');
             let cadastro = {
                 email: data.email,
                 senha: data.senha,
             };
-            localStorage.setItem('cadastro', JSON.stringify(cadastro));
+         
+            if (localStorage.getItem('cadastro') === null) {
+                let dados = [];
+                dados.push(cadastro);
+                localStorage.setItem('cadastro', JSON.stringify(dados));
+            }else{
+                let dados = JSON.parse(localStorage.getItem('cadastro'));
+                dados.push(cadastro);
+                localStorage.setItem('cadastro', JSON.stringify(dados));
+            }
             navigate('/login');
         }
 
