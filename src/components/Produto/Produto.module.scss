@@ -43,10 +43,11 @@
             font-size: 16px;
         }
 
-        a {
+        a{
             color: var(--azul);
             font-size: 14px;
             font-weight: 700;
+            text-decoration: none;
             &:hover{
                 cursor: pointer;
             }

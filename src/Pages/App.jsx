@@ -8,6 +8,7 @@ import AdicionarProduto from './AdicionarProduto';
 import Dashboard from './Dashboard';
 import ProdutoPage from './ProdutoPage';
 import { useState } from 'react';
+import Cadastro from './Cadastro';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
                 <Route index element={<Home setPage={setPage} />} />
                 <Route path='produto/:id' element={<ProdutoPage />} />
                 <Route path='login' element={<Login setPage={setPage}
+                />} />
+                <Route path='cadastro' element={<Cadastro setPage={setPage}
                 />} />
                 <Route path='dashboard' element={<Dashboard setPage={setPage} />} />
                 <Route path='dashboard/adicionar' element={<AdicionarProduto setPage={setPage} />} />

@@ -16,9 +16,10 @@ export default function Login(props) {
 
     const onSubmit = data => {
 
-
-
-        navigate('../dashboard');
+        let bancoDeDados  = JSON.parse(localStorage.getItem('cadastro'));
+        if(bancoDeDados.email == data.email && bancoDeDados.senha == data.senha){
+            navigate('../dashboard');
+        }
     };
 
 
@@ -41,7 +42,9 @@ export default function Login(props) {
                     color={'primario'}
                 >Entrar</Button>
             </form>
-
+            <Button
+                color={'secundario'}
+            >Criar nova conta</Button>
         </main >
     );
 }

@@ -1,9 +1,13 @@
 import styles from './AdicionarProduto.module.scss';
 import Button from '../../components/Button';
 import classNames from 'classnames';
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 export default function AdicionarProduto(props) {
+
+
+
+
     useEffect(() => {
         props.setPage(true);
     });
@@ -19,7 +23,7 @@ export default function AdicionarProduto(props) {
                     </div>
                     <div className={styles.inputBox}>
                         <label htmlFor="">Categorias</label>
-                        <input type="text" />
+                        <input type="text"  />
                     </div>
                     <div className={styles.inputBox}>
                         <label htmlFor="">Nome do produto</label>
@@ -27,10 +31,12 @@ export default function AdicionarProduto(props) {
                     </div>
                     <div className={styles.inputBox}>
                         <label htmlFor="">Preço do produto</label>
-                        <input type="text" />
+                        <input type="text"  />
                     </div>
                     <div className={styles.inputBox}>
-                        <textarea type="text" placeholder='Descrição do produto' />
+                        <textarea type="text" placeholder='Descrição do produto'>
+                           
+                        </textarea>
                     </div>
                     <Button color={'primario'}>Enviar mensagem</Button>
                 </form>
