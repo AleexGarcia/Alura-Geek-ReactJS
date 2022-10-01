@@ -19,7 +19,7 @@ export default function Cadastro() {
     const onSubmit = data => {
 
         if (data.senha === data.confSenha && data.confEmail === data.email) {
-            console.log('entrei');
+           
             let cadastro = {
                 email: data.email,
                 senha: data.senha,
