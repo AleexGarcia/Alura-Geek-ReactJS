@@ -3,14 +3,19 @@ import { Link } from 'react-router-dom';
 
 export default function Produto({ imagem, nome, preco, id, children }) {
 
-    
+    async function removeProduto(id) {
+        return await fetch(`http://localhost:3000/produtos/${id}`, {
+            method: 'DELETE'
+        });
+    }
+
     return (
         <figure className={styles.produto}>
             <img className={styles.produto__imagem} src={imagem} alt='imagem' />
             {children == undefined &&
                 (<div className={styles.produto__controles}>
-                    <i className={styles.produto__delete}></i>
-                    <Link to={'/dashboard/adicionar'} state={id} className={styles.produto__edit}></Link>
+                    <i onClick={() => removeProduto(id)} className={styles.produto__delete}></i>
+                    <Link to={`/dashboard/editar/${id}`} className={styles.produto__edit}></Link>
                 </div>)
             }
             <figcaption>

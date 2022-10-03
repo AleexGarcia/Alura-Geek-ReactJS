@@ -28,7 +28,7 @@ export default function Dashboard() {
                     funcao={paginaAddProduto}
                     color={'primario'} >Adicionar produto</Button>
                 <div className={styles.dashboard__produtos}>
-                    {dados.map((produto, index) => (
+                    {dados.produtos.map((produto, index) => (
                         <Produto
                             key={index}
                             imagem={produto.imagem}

@@ -18,14 +18,14 @@ export default function Home() {
         <main className={styles.home}>
             <Banner />
             <Produtos
-                produtos={dadosProdutos.filter(produto => produto.categoria === 'StarWars')}
+                produtos={dadosProdutos.produtos.filter(produto => produto.categoria === 'StarWars')}
             />
             <Produtos
                 id={'consoles'}
-                produtos={dadosProdutos.filter(produto => produto.categoria === 'Consoles')}
+                produtos={dadosProdutos.produtos.filter(produto => produto.categoria === 'Consoles')}
             />
             <Produtos
-                produtos={dadosProdutos.filter(produto => produto.categoria === 'Diversos')}
+                produtos={dadosProdutos.produtos.filter(produto => produto.categoria === 'Diversos')}
             />
         </main>
     );

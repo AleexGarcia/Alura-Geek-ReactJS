@@ -14,8 +14,8 @@ export default function ProdutoPage() {
 
     const {id}= useParams();
    
-    let produto = dados[dados.findIndex(produto =>produto.id === id)];
-    let similares = dados.filter(prod => prod.categoria === produto.categoria);
+    let produto = dados.produtos[dados.produtos.findIndex(produto =>produto.id === id)];
+    let similares = dados.produtos.filter(prod => prod.categoria === produto.categoria);
     return (
         <main>
             <figure className={styles.produto}>
