@@ -33,17 +33,14 @@
         flex-wrap: wrap;
         column-gap: 2.44%;
         row-gap: 1rem;
-        justify-content: space-between;
+     
         
         figure{
                 
-            &:nth-child(4) {
+            &:nth-child(n+5) {
                 display: none;
             }
 
-            &:nth-child(5) {
-                display: none;
-            }
         }
 
     }
@@ -90,12 +87,16 @@
             column-gap: 1.40%;
             figure {
                 
-                &:nth-child(4) {
+                &:nth-child(n+4) {
                     display: block;
                 }
-
-                &:nth-child(5) {
+                &:nth-child(n+7){
+                    display: none;
+                }
+                &.vertudo{
+                   
                     display: block;
+                    
                 }
             }
 

@@ -44,17 +44,20 @@ export default function AdicionarProduto() {
                     preco: produto.preco,
                     descricao: produto.descricao
                 });
-                setValue('imagem', valores.imagem);
-                setValue('categoria', valores.categoria);
-                setValue('nome', valores.nome);
-                setValue('preco', valores.preco);
-                setValue('descricao', valores.descricao);
-
             }
         })();
 
     }, []);
 
+    useEffect(() => {
+        
+        setValue('imagem', valores.imagem);
+        setValue('categoria', valores.categoria);
+        setValue('nome', valores.nome);
+        setValue('preco', valores.preco);
+        setValue('descricao', valores.descricao);
+
+    }, [valores]);
 
     const { setPage } = useContext(HeaderContext);
 
