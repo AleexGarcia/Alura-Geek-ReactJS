@@ -50,7 +50,7 @@ export default function AdicionarProduto() {
     }, []);
 
     useEffect(() => {
-        
+
         setValue('imagem', valores.imagem);
         setValue('categoria', valores.categoria);
         setValue('nome', valores.nome);
@@ -73,14 +73,31 @@ export default function AdicionarProduto() {
 
 
     const onSubmit = data => {
+        console.log(data);
+        if (id != undefined) {
+            fetch(`http://localhost:3000/produtos/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    imagem: data.imagem,
+                    categoria: data.categoria,
+                    nome: data.nome,
+                    preco: data.preco,
+                    descricao: data.descricao
+                })
+            });
+        } else {
+            fetch('http://localhost:3000/produtos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+        }
 
-        fetch('http://localhost:3000/produtos', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
         navigate('/dashboard');
     };
 

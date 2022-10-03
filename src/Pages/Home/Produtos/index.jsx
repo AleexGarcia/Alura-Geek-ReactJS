@@ -8,9 +8,13 @@ export default function Produtos({ produtos, id }) {
         <section id={id} className={classNames(styles.produtos, 'container')}>
             <h2 className={styles.produtos__titulo}>{produtos[0].categoria}</h2>
             <span
-                onClick={() => {
-                    let section = document.querySelector(`.${styles.produtos__cards}`);
-                    section.classList.toggle('verTudo');
+                onClick={(e) => {
+                    let figures = e.target.nextSibling.childNodes;
+                    figures.forEach((figure, index) => {
+                        if (index > 5) {
+                            figure.classList.toggle(`${styles.verTudo}`);
+                        }
+                    });
                 }}
                 className={styles.produtos__verTudo}
             >Ver tudo
