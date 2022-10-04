@@ -22,7 +22,7 @@ export default function ProdutoPage() {
                 <img className={styles.produto__imagem} src={produto.imagem} alt="" />
                 <figcaption>
                     <h2>{produto.nome}</h2>
-                    <span>R$ {produto.preco}</span>
+                    <span>{(new Intl.NumberFormat('pt-BR',{style:'currency', currency:'BRL'}).format(produto.preco))}</span>
                     <p>{produto.descricao}</p>
                 </figcaption>
             </figure>
