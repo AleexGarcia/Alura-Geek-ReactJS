@@ -1,6 +1,8 @@
 # Alura-Geek-ReactJS
 
-Link para clonar
+## Como utilizar
+
+Faça o clone
 
 ### https://github.com/AleexGarcia/Alura-Geek-ReactJS.git
 
