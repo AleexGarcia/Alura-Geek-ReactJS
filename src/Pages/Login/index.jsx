@@ -10,6 +10,7 @@ export default function Login() {
 
     const { setPage } = useContext(HeaderContext);
     const { authenticated } = useContext(AuthContext);
+    const { tentativaDeLogin} = useContext(AuthContext);
     const { handleLogin } = useContext(AuthContext);
 
     useEffect(() => {
@@ -30,8 +31,7 @@ export default function Login() {
     const onSubmit = data => {
 
         handleLogin(data);
-
-
+        
     };
 
     function redirecionarCadastro() {
@@ -52,6 +52,7 @@ export default function Login() {
                         placeholder=" " type='password' />
                     <label className={styles.inputBox__label} htmlFor="senha">Escreva sua senha</label>
                 </div>
+                {tentativaDeLogin && <p>Login não cadastrado ou senha incorreta!</p>}
                 <Button
                     color={'primario'}
                 >Entrar</Button>

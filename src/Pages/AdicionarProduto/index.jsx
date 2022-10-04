@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { setLocale } from 'yup';
+
 
 export default function AdicionarProduto() {
 
