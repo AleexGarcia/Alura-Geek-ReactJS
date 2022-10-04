@@ -18,6 +18,6 @@ Para iniciar o json server
 
 Para abrir a pagina
 
-### `npm dev start`
+### `npm run dev`
 
 
