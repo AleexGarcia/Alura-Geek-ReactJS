@@ -147,20 +147,12 @@
       "id": "DSlblHs"
     },
     {
-      "imagem": "/assets/produtos/skill_12.png",
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin mollis mattis. Nulla justo enim, molestie et mollis nec, feugiat ac urna. Sed aliquet orci sem, id sagittis arcu volutpat eu. Vivamus eu iaculis turpis. Ut urna libero, semper vitae interdum condimentum, interdum ut mauris. Aenean in fringilla ex. Nulla a laoreet nisl. Phasellus a ligula efficitur, elementum purus non, lacinia lectus. Nullam sem nisl, semper eu risus quis, blandit ornare felis. Cras feugiat, lorem at consectetur porttitor, nisl mi euismod augue, sed aliquet elit erat id augue. Vivamus facilisis libero in dui mattis tincidunt. Suspendisse nec convallis velit, vitae iaculis augue. Proin turpis dui, sollicitudin finibus elementum id, auctor eu risus. Praesent sagittis volutpat lobortis. Pellentesque id rhoncus ligula, at blandit orci. Etiam ultricies accumsan lacinia.",
+      "preco": 95,
+      "nome": "Produto XYZ",
       "categoria": "StarWars",
-      "nome": "Alexandre Garcia",
-      "preco": "30.00",
-      "descricao": "algo ai",
-      "id": "OEPdT_h"
-    },
-    {
-      "imagem": "/assets/produtos/skill_12.png",
-      "categoria": "StarWars",
-      "nome": "Alexandre",
-      "preco": "450.00",
-      "descricao": "algo ai",
-      "id": "nhGApgj"
+      "imagem": "/assets/produtos/skill_1.png",
+      "id": "Uf6P1Rg"
     }
   ]
 }

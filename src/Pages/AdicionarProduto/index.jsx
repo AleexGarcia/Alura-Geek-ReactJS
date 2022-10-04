@@ -149,7 +149,6 @@ export default function AdicionarProduto() {
                     {errors.preco && <p>{errors.preco.message}</p>}
                     <div className={styles.inputBox}>
                         <textarea  {...register('descricao')} type="text" placeholder='Descrição do produto'>
-
                         </textarea>
                     </div>
                     {errors.descricao && <p>{errors.descricao.message}</p>}
