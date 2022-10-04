@@ -5,6 +5,9 @@ import { useContext, useEffect, useState } from 'react';
 import { HeaderContext } from '../../Context/HeaderContext';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { setLocale } from 'yup';
 
 export default function AdicionarProduto() {
 
@@ -14,23 +17,39 @@ export default function AdicionarProduto() {
         imagem: '',
         categoria: '',
         nome: '',
-        preco: '',
+        preco: '0',
         descricao: ''
     });
 
-    const { register, handleSubmit, setValue } = useForm({
+
+
+    const schema = yup.object().shape({
+        imagem: yup.string().required('Deve informar o URL da imagem do produto'),
+        categoria: yup.string().required('Deve informar a categoria do produto'),
+        nome: yup.string().required('Deve informar o nome do produto'),
+        preco: yup.number().typeError('Aceita apenas numeros').required('Deve informar um numero').positive('Deve informar um numero positivo'),
+        descricao: yup.string().required('Entre com a descrição do produto')
+    });
+
+
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm({
         defaultValues: {
             imagem: valores.imagem,
             categoria: valores.categoria,
             nome: valores.nome,
             preco: valores.preco,
             descricao: valores.descricao
-        }
+        }, shouldUnregister: true,
+        resolver: yupResolver(schema),
+
     });
+
+
 
     let { id } = useParams();
 
     useEffect(() => {
+
         (async () => {
             if (id != undefined) {
                 const resposta = await fetch(`http://localhost:3000/produtos/${id}`);
@@ -71,9 +90,8 @@ export default function AdicionarProduto() {
 
 
 
-
     const onSubmit = data => {
-        console.log(data);
+    
         if (id != undefined) {
             fetch(`http://localhost:3000/produtos/${id}`, {
                 method: 'PUT',
@@ -88,6 +106,8 @@ export default function AdicionarProduto() {
                     descricao: data.descricao
                 })
             });
+            navigate('/dashboard');
+
         } else {
             fetch('http://localhost:3000/produtos', {
                 method: 'POST',
@@ -96,10 +116,11 @@ export default function AdicionarProduto() {
                 },
                 body: JSON.stringify(data)
             });
+            navigate('/dashboard');
         }
 
-        navigate('/dashboard');
     };
+
 
     return (
         <main>
@@ -108,25 +129,30 @@ export default function AdicionarProduto() {
                 <form action="" onSubmit={handleSubmit(onSubmit)} className={styles.adicionar__formulario}>
                     <div className={styles.inputBox}>
                         <label htmlFor="">URL da imagem</label>
-                        <input  {...register('imagem', { required: true })} type="text" />
+                        <input  {...register('imagem')} type="text" />
                     </div>
+                    {errors.imagem && <p>{errors.imagem.message}</p>}
                     <div className={styles.inputBox}>
                         <label htmlFor="">Categorias</label>
-                        <input   {...register('categoria', { required: true })} type="text" />
+                        <input   {...register('categoria')} type="text" />
                     </div>
+                    {errors.categoria && <p>{errors.categoria.message}</p>}
                     <div className={styles.inputBox}>
                         <label htmlFor="">Nome do produto</label>
-                        <input   {...register('nome', { required: true })} type="text" />
+                        <input   {...register('nome', { required: 'Informe o nome do produto' })} type="text" />
                     </div>
+                    {errors.nome && <p>{errors.nome.message}</p>}
                     <div className={styles.inputBox}>
                         <label htmlFor="">Preço do produto</label>
-                        <input   {...register('preco', { required: true })} type="text" />
+                        <input type='number' {...register('preco')} />
                     </div>
+                    {errors.preco && <p>{errors.preco.message}</p>}
                     <div className={styles.inputBox}>
-                        <textarea  {...register('descricao', { required: true })} type="text" placeholder='Descrição do produto'>
+                        <textarea  {...register('descricao')} type="text" placeholder='Descrição do produto'>
 
                         </textarea>
                     </div>
+                    {errors.descricao && <p>{errors.descricao.message}</p>}
                     <Button color={'primario'}>{valores.botao}</Button>
                 </form>
             </section>

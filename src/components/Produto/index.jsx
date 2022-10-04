@@ -20,7 +20,7 @@ export default function Produto({ imagem, nome, preco, id, children }) {
             }
             <figcaption>
                 <span className={styles.produto__titulo} >{nome}</span>
-                <span className={styles.produto__preco}>R$ {preco}</span>
+                <span className={styles.produto__preco}>{(new Intl.NumberFormat('pt-BR',{style:'currency', currency:'BRL'}).format(preco))}</span>
                 {children == undefined ? <span>#{id}</span> :
                     <Link
                         to={`/produto/${id}`}

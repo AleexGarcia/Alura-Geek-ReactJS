@@ -15,6 +15,11 @@ main{
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
+        p{
+            color: red;
+            font-size: 12px;
+            
+        }
         .inputBox {
     
             border-radius: 4px;
