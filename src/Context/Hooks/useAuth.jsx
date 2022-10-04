@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function useAuth() {
 
     const [authenticated, setAuthenticated] = useState(false);
-    const [tentativaDeLogin, setTentativaDeLogin] = useState(false);
+   
     async function handleLogin(data) {
         
         let bancoDeDados = JSON.parse(localStorage.getItem('cadastro'));
@@ -15,9 +15,8 @@ export default function useAuth() {
     
             });
         }
-        setTentativaDeLogin(true);
 
     }
 
-    return { authenticated,tentativaDeLogin, handleLogin };
+    return { authenticated, handleLogin };
 }

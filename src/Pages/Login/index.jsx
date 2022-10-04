@@ -1,7 +1,7 @@
 import styles from './Login.module.scss';
 import Button from '../../components/Button';
 import { useForm } from 'react-hook-form';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { HeaderContext } from '../../Context/HeaderContext';
 import { AuthContext } from '../../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -10,9 +10,8 @@ export default function Login() {
 
     const { setPage } = useContext(HeaderContext);
     const { authenticated } = useContext(AuthContext);
-    const { tentativaDeLogin} = useContext(AuthContext);
     const { handleLogin } = useContext(AuthContext);
-
+    const [tentativa, setTentativa] = useState(false);
     useEffect(() => {
         setPage(true);
     });
@@ -26,12 +25,13 @@ export default function Login() {
     const { register, handleSubmit } = useForm();
 
 
+
     let navigate = useNavigate();
 
     const onSubmit = data => {
 
         handleLogin(data);
-        
+        setTentativa(true);
     };
 
     function redirecionarCadastro() {
@@ -52,8 +52,9 @@ export default function Login() {
                         placeholder=" " type='password' />
                     <label className={styles.inputBox__label} htmlFor="senha">Escreva sua senha</label>
                 </div>
-                {tentativaDeLogin && <p>Login não cadastrado ou senha incorreta!</p>}
+                {tentativa && <p>Login não cadastrado ou senha incorreta!</p>}
                 <Button
+        
                     color={'primario'}
                 >Entrar</Button>
             </form>
