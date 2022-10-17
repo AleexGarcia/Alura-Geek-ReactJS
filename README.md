@@ -1,6 +1,8 @@
 # Alura-Geek-ReactJS
 
-Link para clonar
+## Como utilizar
+
+Faça o clone
 
 ### https://github.com/AleexGarcia/Alura-Geek-ReactJS.git
 
@@ -18,6 +20,6 @@ Para iniciar o json server
 
 Para abrir a pagina
 
-### `npm dev start`
+### `npm run dev`
 
 
