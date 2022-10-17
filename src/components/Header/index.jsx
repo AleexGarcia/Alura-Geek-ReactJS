@@ -13,7 +13,7 @@ export default function Header() {
 
     const { page } = useContext(HeaderContext);
     const {authenticated} = useContext(AuthContext);
- 
+    const {setBusca} = useContext(HeaderContext);
 
     const [exibeBusca, setExibeBusca] = useState();
 
@@ -83,7 +83,7 @@ export default function Header() {
             </span>
 
             {(minWidth || exibeBusca) && (<div className={styles.header__inputBox}>
-                <input type="search" placeholder='O que deseja encontrar?' />
+                <input type="search" placeholder='O que deseja encontrar?' onChange={search => setBusca(search.target.value)}/>
                 <label
                     className={styles.header__lupa}
                 >
