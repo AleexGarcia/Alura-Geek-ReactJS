@@ -3,15 +3,39 @@ import styles from './Contato.module.scss';
 import logo from '../../../assets/Header/Logo.svg';
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
-
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
 
 export default function Contato() {
 
+    const [enviado, setEnviado] = useState(false);
+    const schema = yup.object().shape({
 
-    const { register, handleSubmit } = useForm();
+        nome: yup
+            .string()
+            .max(20, 'Maximo de 20 caractares')
+            .required('Deve informar seu nome!')
+            .trim('Deve fornecer um nome válido e nao apenas espaços em branco'),
+        mensagem: yup
+            .string()
+            .max(120, 'Maximo de 120 caractares')
+            .required('Deve dizer o que deseja!')
+            .trim('Deve fornecer uma mensagem válida e nao apenas espaços em branco')
 
-    const onSubmit = (data) =>{
-        console.log(data);
+    }).required('Deve preencher todo o formulario para enviar!');
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        defaultValues: { nome: '', mensagem: '' },
+        resolver: yupResolver(schema)
+    });
+
+    const onSubmit = (data) => {
+        schema
+            .isValid(data)
+            .then((valid) => {
+                setEnviado(valid);
+            });
     };
 
     return (
@@ -48,13 +72,18 @@ export default function Contato() {
             <form className={styles.contato__formulario} onSubmit={handleSubmit(onSubmit)} action="">
                 <h3>Fale conosco</h3>
                 <div className={styles.inputBox}>
-                    <label htmlFor="">Nome</label>
+                    <label htmlFor="nome">Nome</label>
                     <input {...register('nome')} type="text" />
                 </div>
+                {errors.nome && <p className={styles.contato__mensagemErro}>{errors.nome.message}</p>}
                 <div className={styles.inputBox}>
                     <textarea {...register('mensagem')} type="text" placeholder='Escreva sua mensagem' />
                 </div>
+                {errors.mensagem && <p className={styles.contato__mensagemErro}>{errors.mensagem.message}</p>}
+
                 <Button color={'primario'}>Enviar mensagem</Button>
+                {enviado && <span>Mensagem enviada com sucesso!</span>}
+
             </form>
         </section>
     );

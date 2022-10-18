@@ -2,10 +2,11 @@ import styles from './Produtos.module.scss';
 import classNames from 'classnames';
 import Produto from '../../../components/Produto';
 
-export default function Produtos({ produtos, id, categoria }) {
+// eslint-disable-next-line react/prop-types
+export default function Produtos({ produtos, categoria }) {
    
     return (
-        <section id={id} className={classNames(styles.produtos, 'container')}>
+        <section id={categoria === 'Consoles' && categoria} className={classNames(styles.produtos, 'container')}>
             <h2 className={styles.produtos__titulo}>{categoria}</h2>
             <span
                 onClick={(e) => {

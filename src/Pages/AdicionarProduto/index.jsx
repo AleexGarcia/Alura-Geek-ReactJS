@@ -17,18 +17,18 @@ export default function AdicionarProduto() {
         imagem: '',
         categoria: '',
         nome: '',
-        preco: '0',
+        preco: '0.00',
         descricao: ''
     });
 
 
 
     const schema = yup.object().shape({
-        imagem: yup.string().required('Deve informar o URL da imagem do produto'),
-        categoria: yup.string().required('Deve informar a categoria do produto'),
-        nome: yup.string().required('Deve informar o nome do produto'),
-        preco: yup.number().typeError('Aceita apenas numeros').required('Deve informar um numero').positive('Deve informar um numero positivo'),
-        descricao: yup.string().required('Entre com a descrição do produto')
+        imagem: yup.string().trim().required('Deve informar o URL da imagem do produto'),
+        categoria: yup.string().trim().required('Deve informar a categoria do produto'),
+        nome: yup.string().trim().max(20, 'O nome não deve exceder 20 caracteres').required('Deve informar o nome do produto'),
+        preco: yup.number().trim().typeError('Aceita apenas numeros').required('Deve informar um numero').positive('Deve informar um numero positivo'),
+        descricao: yup.string().trim().max(150, 'Campo de descricao deve ter no maximo 150 caracteres').required('Entre com a descrição do produto')
     });
 
 
@@ -91,33 +91,38 @@ export default function AdicionarProduto() {
 
 
     const onSubmit = data => {
+        schema
+            .isValid(data)
+            .then((valid) => {
+                if(valid){
+                    if (id != undefined) {
+                        fetch(`http://localhost:3000/produtos/${id}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                imagem: data.imagem,
+                                categoria: data.categoria,
+                                nome: data.nome,
+                                preco: data.preco,
+                                descricao: data.descricao
+                            })
+                        });
+                        navigate('/dashboard');
     
-        if (id != undefined) {
-            fetch(`http://localhost:3000/produtos/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    imagem: data.imagem,
-                    categoria: data.categoria,
-                    nome: data.nome,
-                    preco: data.preco,
-                    descricao: data.descricao
-                })
+                    } else {
+                        fetch('http://localhost:3000/produtos', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        navigate('/dashboard');
+                    }
+                }
             });
-            navigate('/dashboard');
-
-        } else {
-            fetch('http://localhost:3000/produtos', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-            navigate('/dashboard');
-        }
 
     };
 

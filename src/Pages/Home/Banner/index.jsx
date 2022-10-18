@@ -4,7 +4,7 @@ import styles from './Banner.module.scss';
 
 export default function Banner() {
     function botaoConsole(){
-        window.location.href='#consoles';
+        window.location.href='#Consoles';
     }
     return (
         <section className={styles.banner}>
