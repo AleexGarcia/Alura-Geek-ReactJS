@@ -6,7 +6,7 @@ import Produto from '../../../components/Produto';
 export default function Produtos({ produtos, categoria }) {
    
     return (
-        <section id={categoria === 'Consoles' && categoria} className={classNames(styles.produtos, 'container')}>
+        <section id={categoria === 'Consoles' ? categoria : ''} className={classNames(styles.produtos, 'container')}>
             <h2 className={styles.produtos__titulo}>{categoria}</h2>
             <span
                 onClick={(e) => {

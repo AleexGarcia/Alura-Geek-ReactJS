@@ -4,8 +4,8 @@
       "imagem": "/assets/produtos/skill_1.png",
       "categoria": "StarWars",
       "nome": "Capacetes",
-      "preco": 90,
-      "descricao": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
+      "preco": 65,
+      "descricao": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada.",
       "id": "2"
     },
     {
@@ -37,16 +37,8 @@
       "categoria": "StarWars",
       "nome": "Capa",
       "preco": 90,
-      "descricao": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
+      "descricao": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada.",
       "id": "6"
-    },
-    {
-      "imagem": "/assets/produtos/skill_17.png",
-      "categoria": "Consoles",
-      "nome": "Controle xbox",
-      "preco": 90,
-      "descricao": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
-      "id": "7"
     },
     {
       "imagem": "/assets/produtos/skill_16.png",
@@ -143,6 +135,14 @@
       "categoria": "Diversos",
       "imagem": "/assets/produtos/skill_11.png",
       "id": "c-HZxAI"
+    },
+    {
+      "descricao": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada.",
+      "preco": 65,
+      "nome": "asdas",
+      "categoria": "StarWars",
+      "imagem": "/assets/produtos/skill_1.png",
+      "id": "nJQeLM_"
     }
   ]
 }
